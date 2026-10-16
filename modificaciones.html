@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171615">
+    <meta name="description" content="Marca y anota tus mods de Left 4 Dead 2.">
+    <title>Modificar — L4D2 Mod Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body data-page="modify">
+    <header class="inner-header">
+      <nav class="inner-nav" aria-label="Navegación principal">
+        <a class="brand" href="index.html" aria-label="L4D2 Mod Tracker, inicio">
+          <span class="brand-mark" aria-hidden="true">L4D<span>2</span></span>
+          <span class="brand-name">MOD TRACKER</span>
+        </a>
+        <div class="page-nav">
+          <a class="is-current" href="modificaciones.html" aria-current="page">Modificar</a>
+          <a href="resumen.html">Resumen</a>
+          <a class="nav-home" href="index.html">Inicio</a>
+        </div>
+      </nav>
+      <div class="inner-title">
+        <p class="eyebrow"><span class="status-dot"></span> 01 / ARCHIVO DE CAMBIOS</p>
+        <h1>Modifica tu<br>apocalipsis<span>.</span></h1>
+        <p class="intro">Anota qué cambiaste antes de que otra horda te borre la memoria.</p>
+      </div>
+      <div class="inner-art" aria-hidden="true"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/ss_29b3b4f2a3994c889f6fc12e0781d9d4726ef33f.1920x1080.jpg?t=1772742214" alt=""></div>
+      <div class="hero-bottomline"><span>LEFT 4 DEAD 2 / REGISTRO PERSONAL</span><span>01 — MODIFICACIONES</span></div>
+    </header>
+    <main>
+      <section class="tracker-section" id="tracker" aria-labelledby="tracker-title">
+        <div class="section-heading tracker-heading">
+          <div>
+            <p class="eyebrow">TU COLECCIÓN</p>
+            <h2 id="tracker-title">Inventario de mods</h2>
+          </div>
+          <div class="backup-actions">
+            <button id="export-button" class="button button-primary" type="button"><span aria-hidden="true">↓</span> Exportar configuración</button>
+          </div>
+        </div>
+        <p class="tracker-intro">Cada registro conserva su estado y su nota. Abre una sección para ver los elementos. Cuando termines, exporta tu configuración y cárgala en la página Resumen.</p>
+        <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+        <div class="progress-row">
+          <div class="progress-track" role="progressbar" aria-label="Progreso de mods" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-fill"></span></div>
+          <div class="progress-summary" aria-live="polite"><span id="progress-count">0 / 0</span><span class="progress-label">LISTOS</span></div>
+        </div>
+        <div class="toolbar">
+          <label class="search-box"><span class="visually-hidden">Buscar en el checklist</span><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Busca a Bill, Magnum, campañas..." autocomplete="off"></label>
+          <label class="filter-label" for="category-filter">Filtrar</label>
+          <select id="category-filter" aria-label="Filtrar por categoría"><option value="all">Todas las secciones</option></select>
+        </div>
+        <div id="category-list" class="category-list"></div>
+        <p id="empty-message" class="empty-message" hidden>No encontramos nada con esa búsqueda. Prueba con otro término.</p>
+      </section>
+      <section class="manage-section" aria-labelledby="manage-title">
+        <div class="section-heading manage-heading">
+          <div>
+            <p class="eyebrow">¿FALTA ALGO EN LA LISTA?</p>
+            <h2 id="manage-title">Añade tu propio mod</h2>
+            <p class="section-description">Guarda reemplazos concretos, como “Bill x Steve de Minecraft”, o mods que no aparecen en las secciones.</p>
+          </div>
+        </div>
+        <form id="custom-form" class="custom-form">
+          <label class="custom-field"><span>Nombre del mod</span><input id="custom-name" type="text" maxlength="120" placeholder="Ej. Bill x Steve de Minecraft" required></label>
+          <label class="custom-field category-field"><span>Categoría</span><select id="custom-category"></select></label>
+          <button class="button button-primary" type="submit">Añadir a la lista <span aria-hidden="true">+</span></button>
+        </form>
+        <div id="custom-list" class="custom-list"></div>
+        <p class="backup-footnote"><span aria-hidden="true">↳</span> El progreso se guarda en este navegador. Exporta un JSON para consultarlo desde otro dispositivo en Ver resumen.</p>
+        <button id="reset-button" class="reset-button" type="button">Borrar todo el progreso</button>
+      </section>
+    </main>
+    <footer class="footer">
+      <a class="footer-brand" href="index.html">L4D<span>2</span> / MOD TRACKER</a>
+      <span>Imágenes desde Steam y Left 4 Dead Wiki/Fandom.</span>
+    </footer>
+  </body>
+</html>
